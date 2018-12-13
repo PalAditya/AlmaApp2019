@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:onClick="web"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="That 90's Carnival"
+        android:text="The 90's Carnival"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#10e4e4"
         android:textSize="25sp" />

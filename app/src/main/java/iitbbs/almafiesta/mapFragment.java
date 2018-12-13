@@ -35,24 +35,27 @@ public class mapFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.map, container, false);
-        /*TouchImageView touchImageView=view.findViewById(R.id.map);
-        touchImageView.setMaxZoom(5);*/
-        ImageView imageView=view.findViewById(R.id.map);
-        String str=HelperClass.getSharedPreferencesString(getActivity(),"Map","");
-        int r=0;
-        if(str.length()!=0)
-            r=Integer.parseInt(str);
-        if(r==2)
+        try {
+            TouchImageView imageView = view.findViewById(R.id.map);
+            //ImageView imageView = view.findViewById(R.id.map);
+            String str = HelperClass.getSharedPreferencesString(getActivity(), "Map", "");
+            int r = 0;
+            if (str.length() != 0)
+                r = Integer.parseInt(str);
+            if (r == 2)
                 imageView.setImageResource(R.drawable.map2);
-        else if(r==3)
-            imageView.setImageResource(R.drawable.map3);
-        else if(r==4)
-            imageView.setImageResource(R.drawable.map4);
-        else if(r==5)
-            imageView.setImageResource(R.drawable.map5);
-        else if(r==6)
-            imageView.setImageResource(R.drawable.map6);
-
+            else if (r == 3)
+                imageView.setImageResource(R.drawable.map3);
+            else if (r == 4)
+                imageView.setImageResource(R.drawable.map4);
+            else if (r == 5)
+                imageView.setImageResource(R.drawable.map5);
+            else if (r == 6)
+                imageView.setImageResource(R.drawable.map6);
+        }catch (Exception e)
+        {
+            Log.e("Touch", e.getMessage());
+        }
         return view;
     }
 }
